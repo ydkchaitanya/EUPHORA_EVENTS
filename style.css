@@ -1,0 +1,253 @@
+/* =========================================
+   BASE STYLES & TYPOGRAPHY
+   ========================================= */
+:root {
+    --bg-dark: #0a0a0a;
+    --bg-card: #151515;
+    --text-light: #f4f4f4;
+    --text-muted: #a0a0a0;
+    --neon-primary: #bc13fe;
+    --neon-secondary: #00f0ff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    line-height: 1.6;
+    padding-top: 80px; /* Space for fixed navigation */
+}
+
+h2 {
+    font-size: 2.5rem;
+    color: var(--text-light);
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-bottom: 2px solid var(--neon-primary);
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+p {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+}
+
+/* Remove the ugly default horizontal rules */
+hr {
+    display: none; 
+}
+
+/* =========================================
+   NAVIGATION BAR
+   ========================================= */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background: rgba(10, 10, 10, 0.95);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    border-bottom: 1px solid #222;
+    backdrop-filter: blur(10px);
+}
+
+nav h1 {
+    font-size: 24px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--neon-primary);
+    text-shadow: 0 0 10px rgba(188, 19, 254, 0.5);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+nav ul li a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--neon-secondary);
+    text-shadow: 0 0 8px var(--neon-secondary);
+}
+
+/* =========================================
+   PAGE CONTENT (SECTIONS)
+   ========================================= */
+body > h2, 
+body > p, 
+body > img, 
+body > table, 
+body > form, 
+body > ul, 
+body > h3 {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 20px;
+}
+
+/* Home Page Image */
+img {
+    width: 100%;
+    max-width: 900px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    margin-top: 20px;
+    border: 1px solid #333;
+}
+
+/* =========================================
+   TABLE STYLES (Events Page)
+   ========================================= */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: var(--bg-card);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+th, td {
+    padding: 15px 20px;
+    text-align: left;
+    border-bottom: 1px solid #222;
+}
+
+th {
+    background-color: #1a1a1a;
+    color: var(--neon-secondary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+tr:hover {
+    background-color: #222;
+    transition: background 0.3s ease;
+}
+
+/* =========================================
+   FORM STYLES (Bookings Page)
+   ========================================= */
+form {
+    background: var(--bg-card);
+    padding: 40px;
+    border-radius: 10px;
+    border: 1px solid #222;
+    margin-top: 20px;
+}
+
+form p {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    color: var(--text-light);
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+select {
+    width: 100%;
+    padding: 15px;
+    background: #0a0a0a;
+    border: 1px solid #333;
+    color: var(--text-light);
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: var(--neon-secondary);
+    box-shadow: 0 0 10px rgba(0, 240, 255, 0.2);
+}
+
+input[type="submit"],
+input[type="reset"] {
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    background: transparent;
+    color: var(--text-light);
+    border: 2px solid var(--neon-primary);
+    border-radius: 30px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    margin-right: 15px;
+}
+
+input[type="submit"]:hover {
+    background: var(--neon-primary);
+    box-shadow: 0 0 20px rgba(188, 19, 254, 0.4);
+}
+
+input[type="reset"] {
+    border-color: #555;
+}
+
+input[type="reset"]:hover {
+    background: #333;
+}
+
+/* =========================================
+   LISTS (About & Contact Pages)
+   ========================================= */
+ul {
+    list-style-type: square;
+    margin-left: 20px;
+}
+
+ul li {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+}
+
+strong {
+    color: var(--text-light);
+}
+
+/* =========================================
+   FOOTER
+   ========================================= */
+footer {
+    text-align: center;
+    padding: 30px;
+    margin-top: 50px;
+    border-top: 1px solid #222;
+    background: #050505;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9rem;
+}
